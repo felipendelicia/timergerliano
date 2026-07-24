@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Los pibes de Gerli · EN ESPERA</title>
-<meta name="description" content="Los pibes de Gerli (LPDG) — a la espera de confirmación de la próxima juntada. Hace cuánto que no nos juntamos." />
+<title>Los pibes de Gerli · EL REGRESO A LA PLAZA</title>
+<meta name="description" content="EL REGRESO A LA PLAZA — jueves 24/07, 22:00, Plaza 25 de Agosto. Hasta que dé. Los mismos de siempre." />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#000000" />
 <link rel="canonical" href="https://felipendelicia.github.io/LPDG/" />
@@ -14,21 +14,21 @@
 <meta property="og:locale" content="es_AR" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://felipendelicia.github.io/LPDG/" />
-<meta property="og:title" content="Los pibes de Gerli (LPDG) — EN ESPERA" />
-<meta property="og:description" content="Sin fecha todavía. Mirá hace cuánto que no nos juntamos." />
-<meta property="og:image" content="https://felipendelicia.github.io/LPDG/photos/og-cover.png" />
-<meta property="og:image:secure_url" content="https://felipendelicia.github.io/LPDG/photos/og-cover.png" />
+<meta property="og:title" content="EL REGRESO A LA PLAZA — Jue 24/07 · 22:00" />
+<meta property="og:description" content="Plaza 25 de Agosto · 22:00 · hasta que dé. Los mismos de siempre. ¿Opiniones?" />
+<meta property="og:image" content="https://felipendelicia.github.io/LPDG/photos/og-regreso-plaza.png" />
+<meta property="og:image:secure_url" content="https://felipendelicia.github.io/LPDG/photos/og-regreso-plaza.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Los pibes de Gerli — EN ESPERA" />
+<meta property="og:image:alt" content="EL REGRESO A LA PLAZA — Jue 24/07 22:00 · Plaza 25 de Agosto" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Los pibes de Gerli (LPDG) — EN ESPERA" />
-<meta name="twitter:description" content="Sin fecha todavía. Mirá hace cuánto que no nos juntamos." />
-<meta name="twitter:image" content="https://felipendelicia.github.io/LPDG/photos/og-cover.png" />
-<meta name="twitter:image:alt" content="Los pibes de Gerli — EN ESPERA" />
+<meta name="twitter:title" content="EL REGRESO A LA PLAZA — Jue 24/07 · 22:00" />
+<meta name="twitter:description" content="Plaza 25 de Agosto · 22:00 · hasta que dé. Los mismos de siempre. ¿Opiniones?" />
+<meta name="twitter:image" content="https://felipendelicia.github.io/LPDG/photos/og-regreso-plaza.png" />
+<meta name="twitter:image:alt" content="EL REGRESO A LA PLAZA — Jue 24/07 22:00 · Plaza 25 de Agosto" />
 
 <!-- PWA / instalable -->
 <link rel="manifest" href="manifest.webmanifest" />
@@ -50,8 +50,8 @@
   "alternateName": "LPDG",
   "url": "https://felipendelicia.github.io/LPDG/",
   "inLanguage": "es-AR",
-  "description": "Los pibes de Gerli (LPDG) — a la espera de confirmación de la próxima juntada. Hace cuánto que no nos juntamos.",
-  "image": "https://felipendelicia.github.io/LPDG/photos/og-cover.png"
+  "description": "EL REGRESO A LA PLAZA — jueves 24/07, 22:00, Plaza 25 de Agosto. Hasta que dé.",
+  "image": "https://felipendelicia.github.io/LPDG/photos/og-regreso-plaza.png"
 }
 </script>
 
@@ -61,25 +61,50 @@
 <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* ---- específico de la portada actual ---- */
-  section{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  /* ---- específico de la portada actual: EL REGRESO A LA PLAZA ---- */
+  section{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
     padding:clamp(5rem,12vh,8rem) var(--pad-x) clamp(3rem,8vh,5rem);max-width:1280px;margin:0 auto}
 
+  .st .dot{background:var(--accent)}
+
+  /* escena: callejón de barrios bajos (pared + farol de sodio) */
+  .alley{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .alley .wall{position:absolute;inset:0;opacity:.5;background:
+    repeating-linear-gradient(90deg,rgba(245,245,243,.018) 0 2px,transparent 2px 90px),
+    repeating-linear-gradient(0deg,rgba(245,245,243,.014) 0 1px,transparent 1px 26px),
+    radial-gradient(140% 80% at 50% 0%,rgba(245,245,243,.04),transparent 60%)}
+  .alley .lamp{position:absolute;top:0;left:34%;transform:translateX(-50%);width:min(96vw,980px);height:100svh;
+    animation:flicker 7.5s steps(1,end) infinite;background:
+    radial-gradient(42% 7% at 50% 97%,rgba(255,171,64,.09),transparent 70%),
+    conic-gradient(from 180deg at 50% 0%,transparent 41.5%,rgba(255,171,64,.07) 46%,rgba(255,205,130,.15) 50%,rgba(255,171,64,.07) 54%,transparent 58.5%)}
+  .alley .bulb{position:absolute;top:-4px;left:34%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;
+    background:#ffd9a0;box-shadow:0 0 18px 7px rgba(255,180,80,.75),0 0 70px 26px rgba(255,150,40,.3);
+    animation:flicker 7.5s steps(1,end) infinite}
+  @keyframes flicker{0%,100%{opacity:1}86%{opacity:.35}87.5%{opacity:.95}91%{opacity:.5}92%{opacity:1}}
+
+  /* hero */
   .sec-hero .eyebrow{margin-bottom:clamp(1.2rem,3vw,2rem)}
   h1{font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.025em;
-    font-size:clamp(2rem,7.6vw,5.4rem);max-width:none;overflow-wrap:break-word;hyphens:auto}
+    font-size:clamp(2.4rem,9.5vw,6.8rem);overflow-wrap:break-word}
   h1 .v{color:var(--accent)}
-
   .quote{font-family:var(--font-serif);font-style:italic;color:var(--mut);
     font-size:clamp(1.3rem,3.6vw,2.1rem);line-height:1.3;max-width:34ch;margin-top:clamp(2rem,5vw,3.5rem)}
   .quote .by{display:block;font-style:normal;font-family:var(--font-display);font-weight:600;
     font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);margin-top:1rem}
-
   .scroll{position:absolute;left:var(--pad-x);bottom:clamp(1.6rem,5vh,2.6rem);
     font-weight:600;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);
     display:flex;align-items:center;gap:.7em}
   .scroll .ar{display:inline-block;animation:bob 1.8s ease-in-out infinite}
   @keyframes bob{50%{transform:translateY(6px)}}
+
+  /* datos */
+  .sec-datos .eyebrow{margin-bottom:0}
+  .datos{margin-top:clamp(1.6rem,4vw,2.6rem);border-top:1px solid var(--line)}
+  .drow{padding:clamp(1.1rem,3vw,1.8rem) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:.55rem}
+  .dlbl{font-weight:600;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+  .dval{font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:-.02em;font-size:clamp(1.4rem,5.2vw,3.2rem)}
+  .dval a{color:var(--accent);text-decoration:none;border-bottom:4px solid var(--accent);transition:color .2s,border-color .2s}
+  .dval a:hover{color:#fff;border-color:#fff}
 
   /* contador */
   .sec-count{background:var(--panel)}
@@ -123,24 +148,39 @@
   <nav class="nav">
     <a class="brand" href="index.html" aria-label="Los pibes de Gerli — inicio"><img src="photos/logo-lpdg.svg" alt="Los pibes de Gerli" /></a>
     <span class="nav-r">
-      <span class="st"><span class="dot"></span>en espera</span>
+      <span class="st"><span class="dot"></span>confirmada</span>
       <a href="archivo.html">Archivo</a>
     </span>
   </nav>
 
+  <!-- escena: callejón -->
+  <div class="alley" aria-hidden="true"><div class="wall"></div><div class="lamp"></div><div class="bulb"></div></div>
+
   <!-- HERO -->
   <section class="sec-hero">
-    <p class="eyebrow reveal">Sin fecha confirmada</p>
-    <h1 class="reveal d1">A la espera de confirmación de la <span class="v">próxima juntada</span></h1>
-    <p class="quote reveal d2">No hay fecha todavía. Una juntada no se planea: se confirma. Y el contador no perdona.
+    <p class="eyebrow reveal">Juntada confirmada · jue 24.07 · 22:00</p>
+    <h1 class="reveal d1">El regreso a <span class="v">la plaza</span></h1>
+    <p class="quote reveal d2">Los mismos de siempre. Sin casa, sin excusa: la calle otra vez.
       <span class="by">— Los pibes de Gerli</span></p>
     <span class="scroll reveal d3">scroll <span class="ar">↓</span></span>
+  </section>
+
+  <!-- DATOS -->
+  <section class="sec-datos">
+    <p class="eyebrow reveal">Los datos</p>
+    <div class="datos">
+      <div class="drow reveal"><span class="dlbl">Punto de encuentro</span>
+        <span class="dval"><a href="https://www.google.com/maps/place/Plaza+25+de+Agosto/@-34.5799604,-58.4621187,18z/data=!4m6!3m5!1s0x95bcb5dfe367fd81:0x8c8caea04ae19350!8m2!3d-34.58018!4d-58.461912!16s%2Fg%2F11cmbjkbk8?entry=ttu&amp;g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Plaza 25 de Agosto ↗</a></span></div>
+      <div class="drow reveal d1"><span class="dlbl">Cuándo</span><span class="dval">Jueves 24.07 · 22:00</span></div>
+      <div class="drow reveal d2"><span class="dlbl">Hasta cuándo</span><span class="dval">Hasta que dé</span></div>
+      <div class="drow reveal d3"><span class="dlbl">¿Cenamos?</span><span class="dval">No. Volvemos a la plaza.</span></div>
+    </div>
   </section>
 
   <!-- CONTADOR -->
   <section class="sec-count">
     <div class="count-inner">
-      <p class="kicker reveal">Hace cuánto <b>no nos juntamos</b></p>
+      <p class="kicker reveal" id="kicker">Cuánto falta para <b>el regreso</b></p>
       <div class="clockframe reveal d1">
         <div class="clock" id="clock">
           <div class="cell"><span class="num" id="d">00</span><span class="lbl">días</span></div>
@@ -152,18 +192,19 @@
           <div class="cell"><span class="num" id="s">00</span><span class="lbl">seg</span></div>
         </div>
       </div>
-      <p class="since reveal d2">última vez · <b id="lastDate">—</b></p>
+      <p class="since reveal d2">jue 24 jul 2026 · 22:00 · <b>Plaza 25 de Agosto</b></p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="sec-cta">
-    <h2 class="statement reveal">Sin fecha.<br><span class="v">Por ahora.</span></h2>
+    <h2 class="statement reveal">Sin casa.<br>Sin excusa.<br><span class="v">La plaza.</span></h2>
     <div class="acts reveal d1">
-      <button class="btn v" id="propose">
+      <button class="btn v" id="opinions">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.9L3 29l6.3-1.9A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.6 19.6l-.4-.2-3.7 1.1 1.1-3.6-.3-.4A10.6 10.6 0 0 1 16 5.4zm-3.6 4.8c-.3 0-.7.1-1 .4-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.9c.2.3 2.6 4.1 6.4 5.6 3.1 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.2-1.1-2.5-1.2c-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7l-1-2.5c-.3-.6-.5-.5-.8-.5h-.5z"/></svg>
-        Tirar fecha
+        ¿Opiniones?
       </button>
+      <button class="btn" id="gian">¿Viene Gian?</button>
       <button class="btn" id="copy">Copiar link</button>
       <button class="btn" id="install" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4 6.3 11.7l1.4-1.4L11 13.6V3h1zM5 19h14v2H5v-2z"/></svg>
@@ -182,17 +223,20 @@
 <script>
   document.documentElement.classList.add('js');
 
-  // ---- ancla: última juntada ----
-  const ANCHOR = new Date('2026-07-10T19:00:00-03:00');
+  // ---- ancla: la juntada (cuenta regresiva; al llegar, cuenta para arriba) ----
+  const ANCHOR = new Date('2026-07-24T22:00:00-03:00');
   const ANCHOR_MS = ANCHOR.getTime();
 
   const el = {d:document.getElementById('d'),h:document.getElementById('h'),m:document.getElementById('m'),s:document.getElementById('s')};
   const pad = (n)=>String(n).padStart(2,'0');
   function set(node,v){const x=pad(v);if(node.textContent!==x){node.textContent=x;node.classList.add('tick');setTimeout(()=>node.classList.remove('tick'),120);}}
 
+  const kicker=document.getElementById('kicker');
+  let started=false;
   function tick(){
-    const diff = Math.max(0, Date.now() - ANCHOR_MS);
-    const sec = Math.floor(diff/1000);
+    const now=Date.now();
+    if(now>=ANCHOR_MS && !started){started=true;kicker.innerHTML='Ya arrancó · <b>estamos en la plaza</b>';}
+    const sec = Math.floor(Math.abs(ANCHOR_MS-now)/1000);
     set(el.d, Math.floor(sec/86400));
     set(el.h, Math.floor(sec%86400/3600));
     set(el.m, Math.floor(sec%3600/60));
@@ -201,10 +245,6 @@
   }
   tick();
 
-  const MESES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-  document.getElementById('lastDate').textContent =
-    pad(ANCHOR.getDate())+' '+MESES[ANCHOR.getMonth()]+' '+ANCHOR.getFullYear()+', '+pad(ANCHOR.getHours())+':'+pad(ANCHOR.getMinutes());
-
   // ---- reveal on scroll ----
   const io=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
@@ -212,25 +252,19 @@
   document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 
   // ---- compartir ----
-  function elapsedTxt(){
-    const sec=Math.floor(Math.max(0,Date.now()-ANCHOR_MS)/1000);
-    const d=Math.floor(sec/86400),h=Math.floor(sec%86400/3600),m=Math.floor(sec%3600/60);
-    const p=[];
-    if(d) p.push(d+(d===1?' día':' días'));
-    if(h) p.push(h+'h');
-    if(m && !d) p.push(m+'min');
-    return p.join(' ')||'unos minutos';
-  }
-  function shareText(){
-    return 'Hace '+elapsedTxt()+' que no nos juntamos y seguimos sin fecha. ¿Cuándo caemos? Tirá una.';
-  }
+  const SHARE='EL REGRESO A LA PLAZA — jueves 24/07, 22:00, Plaza 25 de Agosto. Hasta que dé. ¿Opiniones?';
 
   const toast=document.getElementById('toast');
   function showToast(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);}
-  document.getElementById('propose').onclick=async()=>{
-    const text=shareText(), url=location.href;
-    if(navigator.share){try{await navigator.share({title:'Próxima juntada',text,url});return;}catch(e){if(e.name==='AbortError')return;}}
-    window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+
+  document.getElementById('opinions').onclick=async()=>{
+    const url=location.href;
+    if(navigator.share){try{await navigator.share({title:'El regreso a la plaza',text:SHARE,url});return;}catch(e){if(e.name==='AbortError')return;}}
+    window.open('https://wa.me/?text='+encodeURIComponent(SHARE+' '+url),'_blank');
+  };
+  document.getElementById('gian').onclick=()=>{
+    const t='Gian: jueves 24/07, 22:00, Plaza 25 de Agosto. El regreso. ¿Venís o qué? '+location.href;
+    window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank');
   };
   document.getElementById('copy').onclick=async()=>{
     try{await navigator.clipboard.writeText(location.href);showToast('link copiado');}
